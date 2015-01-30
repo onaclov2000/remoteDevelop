@@ -5,6 +5,8 @@ var myRootRef = new Firebase(FB_URL);
 var spawn = require('child_process').spawn;
 var initialize = false;
 
+// OK, basically, the first time we call this, we want to ignore, then we're good,
+// second, you'll need to have cloned initially in teh same folder, then after that, you're good.
 
 myRootRef.limitToLast(1).on('child_added', function(childSnapshot, prevChildName) {
    // code to handle child data changes.
