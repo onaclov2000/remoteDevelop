@@ -7,6 +7,7 @@ var initialize = false;
 
 // OK, basically, the first time we call this, we want to ignore, then we're good,
 // second, you'll need to have cloned initially in teh same folder, then after that, you're good.
+// third, you'll need webhooks, and put that path into gitconfig.js, and your git repo in there too.
 
 myRootRef.limitToLast(1).on('child_added', function(childSnapshot, prevChildName) {
    // code to handle child data changes.
@@ -21,7 +22,6 @@ myRootRef.limitToLast(1).on('child_added', function(childSnapshot, prevChildName
             console.log("Got the data good");
           });
        }
-       //console.log(data["commits"]);
     }
     initialize = true;
 });
